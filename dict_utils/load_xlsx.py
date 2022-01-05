@@ -32,6 +32,9 @@ def rows_to_entries(rows):
     multi_entries = defaultdict(int)
     previous_lemma = ''
     for row in rows:
+        # remove any returns in the entries
+        row = [r.replace('\n', '') if isinstance(r, str) else r for r in row]
+
         acception = {legend[i]: row[i] for i in range(1, len(row)) if row[i]}
 
         lemma = row[0]

@@ -13,12 +13,12 @@ def format_to_dsl(entries, dict_name, add_legend=True):
         lines = [lemma]
         for n, acc in enumerate(acceptions):
             if len(acceptions) > 1:
-                fields = [f'[b]{n+1}.[/b]']
+                fields = [f'      [b]{n+1}.[/b]']
             else:
                 fields = []
             if add_legend:
                 for legend, field in acc.items():
-                    fields.append(f'      [m1][*]{legend}[/*]—{field}[/m]')
+                    fields.append(f'      [m1][*]{legend}[/*]–{field}[/m]')
             else:
                 fields.append(', '.join(acc.values()))
 
